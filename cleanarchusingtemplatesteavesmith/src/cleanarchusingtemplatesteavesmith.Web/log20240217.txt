@@ -1,0 +1,49 @@
+2024-02-17 16:11:29.686 +05:30 [INF] Registered 5 endpoints in 1750 milliseconds.
+2024-02-17 16:11:31.192 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2024-02-17 16:11:31.243 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Contributors" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Contributors" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Status" INTEGER NOT NULL
+);
+2024-02-17 16:11:31.363 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-17 16:11:31.406 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name", "c"."Status"
+FROM "Contributors" AS "c"
+2024-02-17 16:11:31.489 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 7), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-02-17 16:11:31.504 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 8), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-02-17 16:11:31.625 +05:30 [INF] Now listening on: http://localhost:57679
+2024-02-17 16:11:31.631 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-02-17 16:11:31.685 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-17 16:11:31.686 +05:30 [INF] Hosting environment: Development
+2024-02-17 16:11:31.688 +05:30 [INF] Content root path: D:\Project\cleanarchusingtemplatesteavesmith\cleanarchusingtemplatesteavesmith\src\cleanarchusingtemplatesteavesmith.Web
+2024-02-17 16:11:32.031 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - null null
+2024-02-17 16:11:32.295 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 267.7203ms
+2024-02-17 16:11:32.310 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-17 16:11:32.316 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 13810 application/javascript; charset=utf-8 5.9885ms
+2024-02-17 16:11:32.324 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - null null
+2024-02-17 16:11:32.373 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.0408ms
+2024-02-17 16:11:32.516 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - null null
+2024-02-17 16:11:33.025 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 508.9941ms
+2024-02-17 16:11:42.033 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Contributors - application/json 32
+2024-02-17 16:11:42.041 +05:30 [WRN] Failed to determine the https port for redirect.
+2024-02-17 16:11:42.046 +05:30 [INF] Executing endpoint 'HTTP: POST /Contributors'
+2024-02-17 16:11:42.093 +05:30 [INF] Handling CreateContributorCommand
+2024-02-17 16:11:42.096 +05:30 [INF] Property Name : Contributor Name
+2024-02-17 16:11:42.139 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 16), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-02-17 16:11:42.150 +05:30 [INF] Handled CreateContributorCommand with Ardalis.Result.Result`1[System.Int32] in 51 ms
+2024-02-17 16:11:42.158 +05:30 [INF] Executed endpoint 'HTTP: POST /Contributors'
+2024-02-17 16:11:42.164 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Contributors - 200 null application/json 131.797ms
